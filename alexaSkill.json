@@ -1,0 +1,92 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "superstore",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "logout superstore",
+                        "exit ey",
+                        "exit",
+                        "exit superstore"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "total",
+                    "slots": [
+                        {
+                            "name": "amount",
+                            "type": "AMAZON.FinancialService"
+                        }
+                    ],
+                    "samples": [
+                        "what is the total {amount}",
+                        "get me the  the total {amount}",
+                        "show me the  the total {amount}",
+                        "total {amount}",
+                        "what are the number of different {amount}",
+                        "what are the number of distinct {amount}",
+                        "how many different {amount} are there",
+                        "how many distinct {amount} are there"
+                    ]
+                },
+                {
+                    "name": "totalbydimension",
+                    "slots": [
+                        {
+                            "name": "amount",
+                            "type": "AMAZON.FinancialService"
+                        }
+                    ],
+                    "samples": [
+                        "{amount} vs {amount}",
+                        "what is the total {amount} by {amount}",
+                        "what is the total {amount} per {amount}",
+                        "total {amount} by {amount}",
+                        "total {amount} per {amount}",
+                        "total {amount} per {amount} per {amount} ",
+                        "total {amount} by {amount} per {amount} ",
+                        "total {amount} by {amount} by {amount} ",
+                        "total {amount} and {amount} by {amount} by {amount} ",
+                        "total {amount} and {amount} and {amount} by {amount} by {amount} ",
+                        "total {amount} and {amount} and {amount} by {amount} by {amount} by {amount} "
+                    ]
+                },
+                {
+                    "name": "totalwhere",
+                    "slots": [
+                        {
+                            "name": "wherecaluse",
+                            "type": "AMAZON.FinancialService"
+                        },
+                        {
+                            "name": "amount",
+                            "type": "AMAZON.FinancialService"
+                        }
+                    ],
+                    "samples": [
+                        "get  {amount} in the {wherecaluse} for the {wherecaluse}",
+                        "get  {amount} in the {wherecaluse}",
+                        "get  {amount} for the  {wherecaluse}",
+                        "get total {amount} in the {wherecaluse}",
+                        "get total {amount}  for the {wherecaluse}"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}
