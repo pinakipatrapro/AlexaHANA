@@ -12,6 +12,17 @@ function displayWelcomeMessage(callback) {
     callback(null, message);
 }
 
+function displayExitMessage(callback) {
+    var speechletResponse = messageBuilder.buildSpeechletResponse(
+        "Goodbye",
+        "You have ben succesfully disconnected from E Y SAP systems",
+        "",
+        true
+    )
+    var message = messageBuilder.buildResponse({}, speechletResponse);
+    callback(null, message);
+}
+
 function handleIntent(event, callback) {
     try {
         if (event.request.intent.name === "total") {
@@ -25,7 +36,10 @@ function handleIntent(event, callback) {
         else if (event.request.intent.name === "totalwhere") {
             var ssvClauses = event.request.intent.slots;
             dbCommunicator.getTotalWithWhere(callback, ssvClauses);
-        }else{
+        }else if (event.request.intent.name === "AMAZON.CancelIntent") {
+            displayExitMessage(callback);
+        } 
+        else{
             errorHandler.sendNoDataReply(callback);
         }
     }

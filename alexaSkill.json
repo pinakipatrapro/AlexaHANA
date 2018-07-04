@@ -22,7 +22,9 @@
                 },
                 {
                     "name": "AMAZON.StopIntent",
-                    "samples": []
+                    "samples": [
+                        "exit superstore"
+                    ]
                 },
                 {
                     "name": "total",
